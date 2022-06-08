@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-     
+    
     let Arturo = {
         nombre: 'Arturo',
         apellido: 'Cruz',
@@ -111,62 +111,38 @@ document.addEventListener('DOMContentLoaded', () => {
     console.log(alumnos)
     alumnos.push(Jhonny)
     
+
     //funciones
     //defino la funcion
-    function imprimirAlumnos() {
+    /*function imprimirAlumnos() {
         //cuerpo de la funcion
         for (var i = 0; i < alumnos.length; i++) {
             console.log(alumnos[i])
         }
-    }
+    }*/
     
-    let alumno1 = document.getElementById('alumno1')
-    alumnos[0].nombre
+        let clase = document.getElementById('clase')
+        let tarjetas = `<div class="columns">`
 
-    let alumno2 = document.getElementById('alumno2')
-    alumno2.innerHTML = alumnos[1].nombre
+        for (var i = 0; i < alumnos.length; i++) {
+            
+            tarjetas += `
+            <div class = "column is-one-fifth">
+                        <div class = "box">
+                        ${alumnos[i].nombre + i}
+                        </div>
+                        </div>`
+            if((i + 1 ) % 5 == 0 && i > 0)
+            {
+                tarjetas += `
+                </div> 
+                <div class = "columns">`
+            }
+            
+        }
 
-    let alumno3 = document.getElementById('alumno3')
-    alumno3.innerHTML = alumnos[2].nombre
-
-    let alumno4 = document.getElementById('alumno4')
-    alumno4.innerHTML = alumnos[3].nombre
-
-    let alumno5 = document.getElementById('alumno5')
-    alumno5.innerHTML = alumnos[4].nombre
-
-    let alumno6 = document.getElementById('alumno6')
-    alumno6.innerHTML = alumnos[5].nombre
-
-    let alumno7 = document.getElementById('alumno7')
-    alumno7.innerHTML = alumnos[6].nombre
-
-    let alumno8 = document.getElementById('alumno8')
-    alumno8.innerHTML = alumnos[7].nombre
-
-    let alumno9 = document.getElementById('alumno9')
-    alumno9.innerHTML = alumnos[8].nombre
-
-    let alumno10 = document.getElementById('alumno10')
-    alumno10.innerHTML = alumnos[9].nombre
-
-    let alumno11 = document.getElementById('alumno11')
-    alumno11.innerHTML = alumnos[10].nombre
-
-    let alumno12 = document.getElementById('alumno12')
-    alumno12.innerHTML = alumnos[11].nombre
-
-    let alumno13 = document.getElementById('alumno13')
-    alumno13.innerHTML = alumnos[12].nombre
-
-    let alumno14 = document.getElementById('alumno14')
-    alumno14.innerHTML = alumnos[13].nombre
-
-    let alumno15 = document.getElementById('alumno15')
-    alumno15.innerHTML = alumnos[14].nombre
-
-     
-    
-    //realiza el llamado a la funcion para su ejecucion
-    imprimirAlumnos()
+        
+            console.log(tarjetas)
+        //realiza el llamado a la funcion para su ejecucion
+    clase.innerHTML = tarjetas
 })
